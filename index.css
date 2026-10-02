@@ -83,6 +83,10 @@ header img {
     text-decoration: none;
     border-radius: 5px;
 }
+.header-botons {
+    display: flex;
+    gap: 15px;
+}
 
 section {
     max-width: 1000px;
@@ -92,7 +96,7 @@ section {
 
 section h2 {
     color: #38bdf8;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     font-size: 1.8rem;
 }
 
@@ -119,7 +123,12 @@ section p {
     border-radius: 7px;
     padding: 20px;
 }
-
+#sobre-mi p {
+    font-size: 1.2rem;       
+    color: #e2e8f0;         
+    line-height: 1.8;        
+    max-width: 850px;         
+}
 .card {
     margin-bottom: 12px;
 }

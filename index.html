@@ -22,9 +22,11 @@
     <div>
         <h1>Alex Monné Ramirez</h1><br>
         <h2>Desenvolupador d'aplicacions multiplataforma</h2><br>
-        <p>Estudiant de DAM</p>
+        <div class="header-botons">
+            <a class="boto" href="#projectes">Veure projectes</a>
+            <a class="boto" href="#contacte">Contactar</a>
+    </div>
 
-        <a class="boto" href="#projectes">Veure projectes</a>
     </div>
 
     <img src="images/alex.png" alt="Foto de perfil">
@@ -33,7 +35,6 @@
 
 <section id="sobre-mi">
     <h2>Sobre mi</h2>
-
     <p>
         Sóc estudiant de Desenvolupament d'Aplicacions Multiplataforma.
         M'agrada crear projectes, aprendre noves tecnologies i millorar
@@ -46,25 +47,40 @@
 </section>
 
 <section id="formacio">
-    <h2>Formació i certificats</h2>
+    <h2>Formació i experiència</h2>
 
     <div class="card">
         <h3>CFGS Desenvolupament d'Aplicacions Multiplataforma</h3>
-        <p>INS BAIX CAMP · 2026 · Actualitat</p>
+        <p>INS Baix Camp · 2025 - Actualitat</p>
     </div>
 
     <div class="card">
-        <h3>Practiques</h3>
-        <p>Finques Bañeras · 2025</p>
+        <h3>Pràctiques de GM · Finques Bañeras (Reus)</h3>
+        <p>2024 - 2025 · 376 hores</p>
+        <p>Atenció al client, manteniment de la pàgina web i gestió de sistemes.</p>
     </div>
 
-     <div class="card">
-        <h3>CFGM Sistemas Informatics</h3>
-        <p>Institut Mare Molas · 2023 - 2025</p>
+    <div class="card">
+        <h3>CFGM Sistemes Microinformàtics i Xarxes Dual</h3>
+        <p>Institut Mare Molas (Reus) · 2023 - 2025</p>
     </div>
 
+    <div class="card">
+        <h3>Certificat ACTIC Nivell Mitjà</h3>
+        <p>2023</p>
+    </div>
+
+    <div class="card">
+        <h3>Pràctiques · Ponsoft (Reus)</h3>
+        <p>2023 · 40 hores</p>
+        <p>Atenció al client (presencial i telefònica) i manteniment d'equips informàtics.</p>
+    </div>
+
+    <div class="card">
+        <h3>Curs presencial de Sistemes Microinformàtics (560 h)</h3>
+        <p>Microbits Reus · 2023</p>
+    </div>
 </section>
-
 
 <section id="habilitats">
     <h2>Habilitats tècniques</h2>
@@ -78,7 +94,7 @@
 
         <div class="card">
             <h3>Web</h3>
-            <p>HTML · CSS · JavaScript</p>
+            <p>HTML · CSS · JavaScript · PHP</p>
         </div>
 
         <div class="card">
@@ -94,12 +110,9 @@
     </div>
 </section>
 
-
 <section id="projectes">
 
     <h2>Projectes</h2>
-
-    <!-- FILTRES -->
 
     <div class="filtres">
         <button class="actiu" data-filter="all">Tots</button>
@@ -109,9 +122,6 @@
         <button data-filter="web">Web</button>
     </div>
 
-
-    <!-- PROJECTES -->
-
     <div class="grid">
 
         <div class="sense-projectes">
@@ -119,7 +129,6 @@
         </div>
     </div>
 </section>
-
 
 <section id="contacte">
     <h2>Contacte</h2>
@@ -141,9 +150,8 @@
     </div>
 </section>
 
-
 <footer>
-    <p>© 2026 · El meu portafolis</p>
+    <p>© 2026 · Alex Monné Ramirez</p>
 </footer>
 
 <script>
@@ -151,17 +159,15 @@ const buttons = document.querySelectorAll(".filtres button");
 
 buttons.forEach(boto => {
     boto.onclick = () => {
-        // 1. Quitar 'actiu' de todos los botones y ponérselo al pulsado
+
         buttons.forEach(b => b.classList.remove("actiu"));
         boto.classList.add("actiu");
 
-        // 2. Buscar si hay proyectos creados y el mensaje de aviso
         const projectes = document.querySelectorAll(".projecte");
         const senseProjectes = document.querySelector(".sense-projectes");
         let filtre = boto.dataset.filter;
         let visibles = 0;
 
-        // 3. Filtrar proyectos si los hubiera
         projectes.forEach(projecte => {
             if (filtre === "all" || projecte.dataset.category.includes(filtre)) {
                 projecte.style.display = "block";
@@ -171,7 +177,6 @@ buttons.forEach(boto => {
             }
         });
 
-        // 4. Si no hay proyectos visibles (ahora mismo 0), muestra siempre el mensaje
         if (senseProjectes) {
             senseProjectes.style.display = (visibles === 0) ? "block" : "none";
         }
